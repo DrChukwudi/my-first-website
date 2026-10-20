@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box 
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  height: 100vh;
+}
+
+.element {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  border-radius: 10px;
+  
+  /* Apply multiple animations separated by commas */
+  animation: 
+    slideIn 1s ease-out,
+    pulse 2s ease-in-out infinite,
+    rotate 2s linear infinite;
+}
+
+/* Animation 1: Slide in from left */
+@keyframes slideIn {
+  from {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation 2: Pulse (scale up/down) */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(78, 205, 196, 0);
+  }
+}
+
+/* Animation 3: Rotate */
+@keyframes rotate {
+  from {rotate:0deg;}
+  to {rotate:360deg;}
+}
